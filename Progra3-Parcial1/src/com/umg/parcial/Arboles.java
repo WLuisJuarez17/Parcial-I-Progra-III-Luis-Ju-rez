@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Arboles {
 	public static void main (String[] args) {
-		Scanner sc = new Scanner(System.in);
+		Scanner In = new Scanner(System.in);
 		ArbolBinario bt = new ArbolBinario();
 		
 		int opcion = 0;
@@ -12,13 +12,13 @@ public class Arboles {
 		System.out.println("0. SALIR");
 		do {
 			System.out.println("INGRESE OPCION");
-			opcion = sc.nextInt();
+			opcion = In.nextInt();
 			if (opcion == 1) {
 				//Invocar m�todo mostrar
 				bt.mostrar();
 			}else if (opcion == 2) {
 				//Invocar m�todo mostrar
-				bt.agregar(sc);
+				bt.agregar(In);
 			}
 			
 		}while(opcion>0);
@@ -42,11 +42,11 @@ class ArbolBinario {
 	}
 
 	
-	public void agregar(Scanner sc) {
+	public void agregar(Scanner In) {
 		System.out.println("INGRESE VALOR");
-		int valor = sc.nextInt();
+		int valor = In.nextInt();
 		//escriba codigo para ingresar
-		raiz.Insertarnodo(valor);
+		raiz.Add(valor);
 	}
 	
 	
@@ -103,19 +103,19 @@ class Nodo{
 	}
 	
 	//Insertar un elemento
-	public void Insertarnodo (int dato){
-			if(dato < value){
+	public void Add (int text){
+			if(text < value){
 				if (izq == null)
-					izq = new Nodo(dato);
+					izq = new Nodo(text);
 				else
-					izq.Insertarnodo(dato);
+					izq.Add(text);
 			}
 			else{
-				if (dato > value){
+				if (text > value){
 					if (der == null)
-						der = new Nodo(dato);
+						der = new Nodo(text);
 					else
-						der.Insertarnodo(dato);
+						der.Add(text);
 				}
 			}
 	  }
